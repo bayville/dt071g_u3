@@ -49,7 +49,6 @@ namespace Guestbook
                 }
 
 
-
                 Console.WriteLine("\nAnge alternativ: ");
                 int input = (int)Console.ReadKey(true).Key; // Gets user input and typecasts it to an INT
 
@@ -60,9 +59,9 @@ namespace Guestbook
 
                         // Gets user input
                         Console.Write("Ange Namn: ");
-                        string? author = Console.ReadLine();
+                        string? author = Console.ReadLine()?.Trim();
                         Console.Write("Ange Meddelande: ");
-                        string? message = Console.ReadLine();
+                        string? message = Console.ReadLine()?.Trim();;
 
                         // Checks if string is null or empty
                         if (!String.IsNullOrEmpty(author) && !String.IsNullOrEmpty(message))
@@ -117,7 +116,6 @@ namespace Guestbook
                 }
 
             }
-
 
         }
     }
