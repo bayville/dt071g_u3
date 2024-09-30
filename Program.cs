@@ -10,7 +10,7 @@ namespace Guestbook
             int i = 0; // Declares and int used in loop
 
             while (true)
-            {   
+            {
                 Console.Clear();                            // Clears console
                 Console.CursorVisible = false;              // Hides cursor
                 int postsCount = posts.GetPosts().Count;    // Gets length of posts lists
@@ -19,7 +19,8 @@ namespace Guestbook
                 Console.WriteLine("1. Skriv inlägg");
 
                 // If there are posts in the list write out delete option
-                if (postsCount > 0) {
+                if (postsCount > 0)
+                {
                     Console.WriteLine("2. Radera inlägg");
                 }
 
@@ -47,10 +48,10 @@ namespace Guestbook
                     i++;
                 }
 
-          
-            
+
+
                 Console.WriteLine("\nAnge alternativ: ");
-                int input = (int) Console.ReadKey(true).Key; // Gets user input and typecasts it to an INT
+                int input = (int)Console.ReadKey(true).Key; // Gets user input and typecasts it to an INT
 
                 Console.CursorVisible = true; // Makes cursor visible
                 switch (input)
@@ -65,7 +66,7 @@ namespace Guestbook
 
                         // Checks if string is null or empty
                         if (!String.IsNullOrEmpty(author) && !String.IsNullOrEmpty(message))
-                        {   
+                        {
                             try
                             {
                                 posts.AddPost(author, message); // Adds new post using method AddPost
@@ -86,7 +87,8 @@ namespace Guestbook
                         break;
 
                     case 50: // 50 = key 2
-                        if (postsCount <= 0) {
+                        if (postsCount <= 0)
+                        {
                             // Writes out error message using custom error class
                             errorHandler.DisplayError("Det finns inga inlägg att ta bort");
                             errorHandler.WaitForKeyPress();
@@ -101,7 +103,7 @@ namespace Guestbook
                                 posts.RemovePost(removeIndex); // Removes post from list
                             }
                             catch (Exception)
-                            {   
+                            {
                                 // Writes out error message using custom error class
                                 errorHandler.DisplayError("Index finns inte i listan, ange giltigt index");
                                 errorHandler.WaitForKeyPress();
@@ -113,11 +115,6 @@ namespace Guestbook
                         Environment.Exit(0);
                         break;
                 }
-
-          
-
-
-
 
             }
 
