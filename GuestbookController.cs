@@ -41,6 +41,10 @@ namespace Guestbook
             WriteToFile();
         }
 
+        public void RemovePost(int index){
+            posts.RemoveAt(index);
+        }
+
         // Returns the list of posts
         public List<Post> GetPosts()
         {

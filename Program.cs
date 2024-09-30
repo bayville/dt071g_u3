@@ -1,4 +1,5 @@
-﻿namespace Guestbook
+﻿
+namespace Guestbook
 {
     internal class Program
     {
@@ -10,7 +11,13 @@
             while (true)
             {   
                 Console.Clear(); // Clears console
-                
+                 
+                Console.WriteLine("1. Radera inlägg");
+                Console.WriteLine("2. Skriv inlägg");
+                Console.WriteLine("X. Avsluta\n");
+
+
+
                 // Loops and writes out all posts
                 i=0;
                 foreach (Post post in posts.GetPosts())
@@ -19,21 +26,46 @@
                     i++;
                 }
 
-                //Gets user inpur
-                Console.Write("Ange Namn: ");
-                string? author = Console.ReadLine();
-                Console.Write("Ange Meddelande: ");
-                string? message = Console.ReadLine();
+                Console.WriteLine("Ange alternativ: ");
+                int input = (int) Console.ReadKey(true).Key;
 
-                // Checks if string is empty
-                if (!String.IsNullOrEmpty(author) && !String.IsNullOrEmpty(message))
+                switch (input)
                 {
-                    posts.AddPost(author, message);
+                    case '1':
+                        // Gets user input
+                        Console.WriteLine(input);
+                        Console.Write("Ange Namn: ");
+                        string? author = Console.ReadLine();
+                        Console.Write("Ange Meddelande: ");
+                        string? message = Console.ReadLine();
+
+                        // Checks if string is empty
+                        if (!String.IsNullOrEmpty(author) && !String.IsNullOrEmpty(message))
+                        {
+                            posts.AddPost(author, message);
+                        }
+                        else
+                        {
+                            
+                        }
+                        break;
+                    case '2':
+                        Console.WriteLine(input);
+                        Console.Write("Ange nummer för inlägg att ta bort: ");
+                        string? rm = Console.ReadLine();
+                        int index = Convert.ToInt32(rm);
+                        posts.RemovePost(index);
+                        break;
+                    case 88:
+                        Console.WriteLine(input);
+                        Environment.Exit(0);
+                        break;
                 }
-                else
-                {
-                    
-                }
+
+          
+
+
+
 
             }
 
