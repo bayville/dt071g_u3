@@ -1,10 +1,10 @@
 namespace Guestbook
 {
-    public class ErrorHandler
+    public static class ErrorHandler
     {
 
         // Method to display error message
-        public void DisplayError(string errMessage)
+        public static void DisplayError(string errMessage)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"\n{errMessage}");
@@ -12,7 +12,7 @@ namespace Guestbook
         }
 
         // Metod to display message and wait for keypress
-        public void WaitForKeyPress()
+        public static void WaitForKeyPress()
         {
             Console.WriteLine("Tryck på valfri knapp för att fortsätta...");
             Console.ReadKey();
