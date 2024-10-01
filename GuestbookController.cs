@@ -15,7 +15,8 @@ namespace Guestbook
                 if (File.Exists(filename))
                 {
                     string jsonString = File.ReadAllText(filename); // Reads file
-                    if (String.IsNullOrEmpty(jsonString)){
+                    if (String.IsNullOrEmpty(jsonString))
+                    {
                         File.WriteAllText(filename, "[]"); // Adds brackets
                     }
                     else
@@ -36,7 +37,8 @@ namespace Guestbook
         }
 
         // Adds a new post
-        public Post AddPost(string author, string message){
+        public Post AddPost(string author, string message)
+        {
             // Creates an instance of Post and adds values to properties
             Post post = new()
             {
@@ -50,7 +52,8 @@ namespace Guestbook
         }
 
         // Removes post from list using index
-        public int RemovePost(int index){
+        public int RemovePost(int index)
+        {
             _posts.RemoveAt(index);
             WriteToFile();
             return index;

@@ -6,7 +6,7 @@ namespace Guestbook
         private static readonly string _filename = @"ascii-text-art.txt";
         private static readonly string _heading = "GÄSTBOK\n";
 
-         // Method to display ASCII art or the heading if the file is empty or not found
+        // Method to display ASCII art or the heading if the file is empty or not found
         public static void Display()
         {
             try
@@ -30,7 +30,7 @@ namespace Guestbook
                     Console.WriteLine(_heading);
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 Console.WriteLine(_heading);
             }
