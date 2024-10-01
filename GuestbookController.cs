@@ -1,6 +1,5 @@
 using System.Text.Json;
 
-
 namespace Guestbook
 {
     public class GuestbookController

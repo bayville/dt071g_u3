@@ -1,4 +1,12 @@
-﻿namespace Guestbook
+﻿﻿/*
+* Skapad av: Fredrik Eklund (frek1802)
+* Kurs: DT071G
+* 
+* Beskrivning: En konsolapplikation som fungerar som en gästbok. Använder sig av JSON för att lagra inlägg
+*
+*/
+
+namespace Guestbook
 {
     internal class Program
     {
@@ -9,7 +17,7 @@
             while (true)
             {
                 Console.Clear();                            // Clears console
-                ASCIIArt.Display();                         // Calls class ASCIIArt to e
+                ASCIIArt.Display();                         // Calls class ASCIIArt to display heading/header of applikation
                 Console.CursorVisible = false;              // Hides cursor
                 int postsCount = posts.GetPosts().Count;    // Gets length of posts lists
 
